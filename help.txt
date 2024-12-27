@@ -1,0 +1,7 @@
+Due to the large volume of datasource files, I have picked up a sample of data into the datasource files.
+Of course, you can put the original files into imdb\src\main\resources\dataSource, and you can edit file names in application.properties too.
+
+1- localhost:8080/gateway/v1/imdb/get-title-by-directors-same-writers
+2- localhost:8080/gateway/v1/imdb/get-title-by-special-actors?actorId1=nm1588970&actorId2=nm0932055
+3- localhost:8080/gateway/v1/imdb/get-title-by-highest-vote-rating?genre=Short
+4- localhost:8080/gateway/v1/imdb/request-count
