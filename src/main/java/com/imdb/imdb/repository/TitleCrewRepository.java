@@ -28,8 +28,8 @@ public class TitleCrewRepository {
     }
 
 
-    private List<TitleEpisode> titleEpisodes = new ArrayList<>();
-
-
-    private List<TitleAkas> titleAkas = new ArrayList<>();
+//    private List<TitleEpisode> titleEpisodes = new ArrayList<>();
+//
+//
+//    private List<TitleAkas> titleAkas = new ArrayList<>();
 }

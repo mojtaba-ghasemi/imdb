@@ -66,12 +66,13 @@ public class DataLoader {
         CompletableFuture<String> task1 = titleCrew_loadCsv_task();
         CompletableFuture<String> task2 = nameBasics_loadCsv_task();
         CompletableFuture<String> task3 = titlePrincipals_loadCsv_task();
-        CompletableFuture<String> task4 = titleEpisodes_loadCsv_task();
-        CompletableFuture<String> task5 = titleRatings_loadCsv_task();
-        CompletableFuture<String> task6 = titleBasics_loadCsv_task();
-        CompletableFuture<String> task7 = titleAkas_loadCsv_task();
+        CompletableFuture<String> task4 = titleRatings_loadCsv_task();
+        CompletableFuture<String> task5 = titleBasics_loadCsv_task();
 
-        CompletableFuture.allOf(task1, task2, task3, task4, task5, task6, task7).join();
+//        CompletableFuture<String> task6 = titleEpisodes_loadCsv_task();
+//        CompletableFuture<String> task7 = titleAkas_loadCsv_task();
+
+        CompletableFuture.allOf(task1, task2, task3, task4, task5).join();
         return "";
     }
 
@@ -105,15 +106,15 @@ public class DataLoader {
         return CompletableFuture.completedFuture("");
     }
 
-    @Async
-    public CompletableFuture<String> titleEpisodes_loadCsv_task() throws IOException, URISyntaxException {
-        loadCsv(imdbDatasetTitleEpisodeCsv, (Object objectString) -> {
-            TitleEpisode titleEpisode = TitleEpisode.getObject((String[]) objectString);
-            titleCrewRepository.getTitleEpisodes().add(titleEpisode);
-            return null;
-        });
-        return CompletableFuture.completedFuture("");
-    }
+//    @Async
+//    public CompletableFuture<String> titleEpisodes_loadCsv_task() throws IOException, URISyntaxException {
+//        loadCsv(imdbDatasetTitleEpisodeCsv, (Object objectString) -> {
+//            TitleEpisode titleEpisode = TitleEpisode.getObject((String[]) objectString);
+//            titleCrewRepository.getTitleEpisodes().add(titleEpisode);
+//            return null;
+//        });
+//        return CompletableFuture.completedFuture("");
+//    }
 
     @Async
     public CompletableFuture<String> titleRatings_loadCsv_task() throws IOException, URISyntaxException {
@@ -135,15 +136,15 @@ public class DataLoader {
         return CompletableFuture.completedFuture("");
     }
 
-    @Async
-    public CompletableFuture<String> titleAkas_loadCsv_task() throws IOException, URISyntaxException {
-        loadCsv(imdbDatasetTitleAkasCsv, (Object objectString) -> {
-            TitleAkas titleAkas = TitleAkas.getObject((String[]) objectString);
-            titleCrewRepository.getTitleAkas().add(titleAkas);
-            return null;
-        });
-        return CompletableFuture.completedFuture("");
-    }
+//    @Async
+//    public CompletableFuture<String> titleAkas_loadCsv_task() throws IOException, URISyntaxException {
+//        loadCsv(imdbDatasetTitleAkasCsv, (Object objectString) -> {
+//            TitleAkas titleAkas = TitleAkas.getObject((String[]) objectString);
+//            titleCrewRepository.getTitleAkas().add(titleAkas);
+//            return null;
+//        });
+//        return CompletableFuture.completedFuture("");
+//    }
 
     private void loadCsv(String csvFileName, Function function) throws IOException, URISyntaxException {
 
