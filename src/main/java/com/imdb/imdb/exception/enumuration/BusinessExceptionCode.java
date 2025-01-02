@@ -3,6 +3,7 @@ package com.imdb.imdb.exception.enumuration;
 public enum BusinessExceptionCode {
     GENERAL_ERROR(-1),
     SECURITY_UNHANDLED_EXCEPTION(-2),
+
     COMMAND_NOT_SUPPORTED(5003008),
     COMMAND_IMDB_SERVICE_ERROR(5004000),
 
